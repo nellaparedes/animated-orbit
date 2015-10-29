@@ -1,0 +1,23 @@
+{
+  "name": "animated-orbit",
+  "version": "1.0.0",
+  "description": "Add animate.css to Foundation Orbit Slider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nellaparedes/animated-orbit.git"
+  },
+  "keywords": [
+    "foundation",
+    "animate.css"
+  ],
+  "author": "nellaparedes <nella.paredes@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nellaparedes/animated-orbit/issues"
+  },
+  "homepage": "https://github.com/nellaparedes/animated-orbit#readme"
+}
