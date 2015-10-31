@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Demo Animated Orbit</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/modernizr.js"></script>
+</head>
+<body>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<h1 class="text-center">Animated Orbit Demo</h1>
+			<p class="lead"></p>
+
+			<h2>Example 1</h2>
+			<ul class="example-orbit" data-orbit>
+			  <li>
+			    <img src="http://lorempixel.com/1000/400/nature" alt="slide 1" />
+			    <div class="orbit-caption">
+			      Caption One.
+			    </div>
+			  </li>
+			  <li>
+			    <img src="http://lorempixel.com/1000/400/people" alt="slide 2" />
+			    <div class="orbit-caption">
+			      Caption Two.
+			    </div>
+			  </li>
+			  <li>
+			    <img src="http://lorempixel.com/1000/400/animals" alt="slide 3" />
+			    <div class="orbit-caption">
+			      Caption Three.
+			    </div>
+			  </li>
+			</ul>
+
+			<hr>
+
+			<h2>Example 2</h2>
+			<ul class="example-orbit-content animated-orbit" data-orbit>
+				<li data-orbit-slide="headline-1">
+					<div class="panel">
+					  <h2 animated data-animate-in="fadeInLeft" data-animate-out="fadeOutLeft">Headline 1</h2>
+					  <h3 animated data-animate-in="slideInLeft" data-animate-out="slideOutLeft">Subheadline</h3>
+					</div>
+				</li>
+				<li data-orbit-slide="headline-2">
+					<div class="panel">
+					  <h2 animated data-animate-in="fadeInLeft" data-animate-out="fadeOutLeft">Headline 2</h2>
+					  <h3 animated data-animate-in="slideInLeft" data-animate-out="slideOutLeft">Subheadline</h3>
+					</div>
+				</li>
+				<li data-orbit-slide="headline-3">
+					<div class="panel">
+					  <h2 animated data-animate-in="fadeInLeft" data-animate-out="fadeOutLeft">Headline 3</h2>
+					  <h3 animated data-animate-in="slideInLeft" data-animate-out="slideOutLeft">Subheadline</h3>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
+	<script src="./dist/animated-orbit.js"></script>
+	<script>
+	    jQuery(document).foundation();
+	</script>
+</body>
+</html>
