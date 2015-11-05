@@ -9,6 +9,11 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/modernizr.js"></script>
+	<style>
+		.orbit-content li{
+			overflow: hidden;
+		}
+	</style>
 </head>
 <body>
 
@@ -17,7 +22,7 @@
 			<h1 class="text-center">Animated Orbit Demo</h1>
 			<p class="lead"></p>
 
-			<h2>Example 1</h2>
+			<!--<h2>Example 1</h2>
 			<ul class="example-orbit" data-orbit>
 			  <li>
 			    <img src="http://lorempixel.com/1000/400/nature" alt="slide 1" />
@@ -39,10 +44,10 @@
 			  </li>
 			</ul>
 
-			<hr>
+			<hr>-->
 
 			<h2>Example 2</h2>
-			<ul class="example-orbit-content animated-orbit" data-orbit>
+			<ul class="orbit-content animated-orbit" data-orbit>
 				<li data-orbit-slide="headline-1">
 					<div class="panel">
 					  <h2 animated data-animate-in="fadeInLeft" data-animate-out="fadeOutLeft">Headline 1</h2>
@@ -68,8 +73,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/jquery.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.min.js"></script>
 	<script src="./dist/animated-orbit.js"></script>
-	<script>
-	    jQuery(document).foundation();
-	</script>
 </body>
 </html>

@@ -25,6 +25,7 @@
     "webpack": "~1.12.2",
     "babel-loader": "~5.3.3",
     "jqlite": "~0.2.25",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "foundation": "~4.2.1-1"
   }
 }
