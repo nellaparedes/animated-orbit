@@ -60,21 +60,8 @@
 
 	(0, _jquery2['default'])(document).foundation();
 
-	console.log(_foundation2['default'].utils.is_medium_up());
-
 	var Helper = new _util.Helpers();
 	var sliders = Helper.query(".animated-orbit");
-
-	/*sliders.map( (item) => {
-		let animOrbit = new AnimatedOrbit(item);
-		animOrbit.init();
-
-		Helper.addEvent(item, "after-slide-change.fndtn.orbit", e => {
-			console.log('after change');
-			//this.animateActive();
-		});
-		return item;
-	} );*/
 
 	sliders.map(function (item) {
 		var animOrbit = new _util.AnimatedOrbit(item);
@@ -103,6 +90,8 @@
 		value: true
 	});
 
+	var _slicedToArray = (function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; })();
+
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -120,27 +109,6 @@
 				var items = parent.querySelectorAll(selector);
 				return Array.prototype.slice.call(items);
 			}
-		}, {
-			key: "createEvent",
-			value: function createEvent(eventName) {
-				var bubble = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
-				var cancel = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
-				var detail = arguments.length <= 3 || arguments[3] === undefined ? null : arguments[3];
-
-				var customEvent = new Event(eventName);
-				return customEvent;
-			}
-		}, {
-			key: "addEvent",
-			value: function addEvent(elem, event, fn) {
-				if (elem.addEventListener) {
-					elem.addEventListener(event, fn, false);
-				} else if (elem.attachEvent) {
-					elem.attachEvent("on#{event}", fn);
-				} else {
-					elem[event] = fn;
-				}
-			}
 		}]);
 
 		return Helpers;
@@ -154,19 +122,39 @@
 
 			this.el = el;
 			this.helper = new Helpers();
+			this.vendors = ["moz", "webkit"];
 		}
 
 		_createClass(AnimatedOrbit, [{
 			key: "init",
 			value: function init() {
+				var _this = this;
+
 				var animateds = this.helper.query('[animated]');
 
 				animateds.map(function (item) {
-					return item.classList.add("animated");
+					return _this.initStyles(item);
 				});
 
 				this.addEvents();
 				this.animateActive();
+			}
+		}, {
+			key: "initStyles",
+			value: function initStyles(el) {
+				var styles = new Map();
+
+				el.classList.add("animated");
+
+				if (el.dataset.delay) {
+					styles.set('animationDelay', el.dataset.delay);
+				}
+
+				if (el.dataset.duration) {
+					styles.set('animationDuration', el.dataset.duration);
+				}
+
+				this.vendorSet(el, styles);
 			}
 		}, {
 			key: "animateActive",
@@ -183,14 +171,14 @@
 		}, {
 			key: "addEvents",
 			value: function addEvents() {
-				var _this = this;
+				var _this2 = this;
 
 				$(this.el).on("after-slide-change.fndtn.orbit", function (e) {
-					_this.animateActive();
+					_this2.animateActive();
 				});
 
 				$(this.el).on("before-slide-change.fndtn.orbit", function (e) {
-					_this.hideInactive();
+					_this2.hideInactive();
 				});
 			}
 		}, {
@@ -218,24 +206,63 @@
 		}, {
 			key: "hideInactive",
 			value: function hideInactive() {
-				var _this2 = this;
+				var _this3 = this;
 
 				var slides = this.helper.query('li:not(.active)', this.el);
 
 				slides.map(function (item) {
-					return _this2.animateOut(item);
+					return _this3.animateOut(item);
 				});
 			}
 		}, {
 			key: "hideAll",
 			value: function hideAll() {
-				var _this3 = this;
+				var _this4 = this;
 
 				var slides = this.helper.query('li', this.el);
 
 				slides.map(function (item) {
-					return _this3.animateOut(item);
+					return _this4.animateOut(item);
 				});
+			}
+		}, {
+			key: "vendorSet",
+			value: function vendorSet(elem, properties) {
+				var _iteratorNormalCompletion = true;
+				var _didIteratorError = false;
+				var _iteratorError = undefined;
+
+				try {
+
+					for (var _iterator = properties.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+						var _step$value = _slicedToArray(_step.value, 2);
+
+						var name = _step$value[0];
+						var value = _step$value[1];
+
+						elem.style[name] = value;
+
+						this.vendors.forEach(function (vendor) {
+							var property = vendor + name.charAt(0).toUpperCase() + name.substr(1);
+							elem.style[property] = value;
+						});
+					}
+				} catch (err) {
+					_didIteratorError = true;
+					_iteratorError = err;
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion && _iterator["return"]) {
+							_iterator["return"]();
+						}
+					} finally {
+						if (_didIteratorError) {
+							throw _iteratorError;
+						}
+					}
+				}
+
+				return elem;
 			}
 		}]);
 
