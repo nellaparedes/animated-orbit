@@ -1,5 +1,8 @@
 # Animated Orbit
 
+[![version](https://img.shields.io/npm/v/animated-orbit.svg?style=flat-square)](https://www.npmjs.com/package/animated-orbit)
+[![downloads](https://img.shields.io/npm/dm/animated-orbit.svg?style=flat-square)](https://www.npmjs.com/package/animated-orbit)
+
 Add some nice animations to your Orbit Slider. You can trigger [animate.css](https://github.com/daneden/animate.css) animations to any element of the slide.
 
 ## Live Demo
