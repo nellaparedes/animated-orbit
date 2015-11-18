@@ -2,10 +2,7 @@
   "name": "animated-orbit",
   "version": "1.0.0",
   "description": "Add animate.css to Foundation Orbit Slider",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "dist/animated-orbit.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nellaparedes/animated-orbit.git"
@@ -15,7 +12,7 @@
     "animate.css"
   ],
   "author": "nellaparedes <nella.paredes@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nellaparedes/animated-orbit/issues"
   },
@@ -24,7 +21,6 @@
     "babel-core": "~5.8.33",
     "webpack": "~1.12.2",
     "babel-loader": "~5.3.3",
-    "jqlite": "~0.2.25",
     "jquery": "~2.1.4",
     "foundation": "~4.2.1-1"
   }

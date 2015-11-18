@@ -3,8 +3,6 @@ import Foundation from 'foundation';
 
 import {Helpers, AnimatedOrbit} from './util';
 
-$(document).foundation();
-
 let Helper = new Helpers;
 let sliders = Helper.query(".animated-orbit");
 
