@@ -4,35 +4,48 @@
     <meta charset="UTF-8">
     <title>Animated-orbit by nellaparedes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/github-light.css" media="screen">
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Animated-orbit</h1>
-      <h2 class="project-tagline">Add animate.css animations to Foundation Orbit Slider</h2>
-      <a href="https://github.com/nellaparedes/animated-orbit" class="btn">View on GitHub</a>
-      <a href="https://github.com/nellaparedes/animated-orbit/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/nellaparedes/animated-orbit/tarball/master" class="btn">Download .tar.gz</a>
+    <ul class="orbit-content animated-orbit" data-orbit>
+      <li data-orbit-slide="headline-1">
+        <div class="slide-content">          
+          <h1 animated data-animate-in="fadeInLeft" data-animate-out="fadeOutLeft" class="project-name">Animated-orbit</h1>
+          <h2 animated data-animate-in="fadeInLeft" data-animate-out="fadeOutLeft" data-delay="0.3s" class="project-tagline">Add animate.css animations to Foundation Orbit Slider</h2>
+          <a animated data-animate-in="bounceIn" data-animate-out="bounceOut" data-delay="0.5s" href="https://github.com/nellaparedes/animated-orbit" class="btn">View on GitHub</a>
+          <a animated data-animate-in="bounceIn" data-animate-out="bounceOut" data-delay="0.7s" href="https://github.com/nellaparedes/animated-orbit/zipball/master" class="btn">Download .zip</a>
+          <a animated data-animate-in="bounceIn" data-animate-out="bounceOut" data-delay="0.9s" href="https://github.com/nellaparedes/animated-orbit/tarball/master" class="btn">Download .tar.gz</a>
+        </div>
+      </li>
+      <li data-orbit-slide="headline-2">
+        <div class="slide-content">
+          <h2 animated data-animate-in="fadeIn" data-animate-out="fadeOut" data-delay="0.2" class="project-name">Use any animation</h2>
+          <h3 animated data-animate-in="lightSpeedIn" data-animate-out="lightSpeedOut" data-delay="0.5s">delay</h2>
+          <h3 animated data-animate-in="tada" data-animate-out="fadeOut" data-delay="0.9s" data-duration="1s">and <span>duration</span></h3>
+          <h3 animated data-animate-in="fadeIn" data-animate-out="fadeOut" data-delay="2s">on 
+          <span animated data-animate-in="flash" data-animate-out="fadeOut" data-delay="2.2s">any</span> 
+          <span animated data-animate-in="pulse" data-animate-out="fadeOut" data-delay="2.5s">element</span>
+          </h3>
+        </div>
+      </li>
+    </ul>
     </section>
 
     <section class="main-content">
       <h1>
 <a id="animated-orbit" class="anchor" href="#animated-orbit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Animated Orbit</h1>
 
-<p><a href="https://www.npmjs.com/package/animated-orbit"><img src="https://img.shields.io/npm/v/animated-orbit.svg?style=flat-square" alt="version"></a>
-<a href="https://www.npmjs.com/package/animated-orbit"><img src="https://img.shields.io/npm/dm/animated-orbit.svg?style=flat-square" alt="downloads"></a></p>
+<p><a href="https://www.npmjs.com/package/animated-orbit" target="_blank"><img src="https://img.shields.io/npm/v/animated-orbit.svg?style=flat-square" alt="version"></a>
+<a href="https://www.npmjs.com/package/animated-orbit" target="_blank"><img src="https://img.shields.io/npm/dm/animated-orbit.svg?style=flat-square" alt="downloads"></a></p>
 
 <p>Add some nice animations to your Orbit Slider. You can trigger <a href="https://github.com/daneden/animate.css">animate.css</a> animations to any element of the slide.</p>
-
-<h2>
-<a id="live-demo" class="anchor" href="#live-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Live Demo</h2>
-
-<ul>
-<li>Click here to see some examples</li>
-</ul>
 
 <h2>
 <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
@@ -41,9 +54,9 @@
 <a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
 
 <ul>
-<li><a href="http://foundation.zurb.com/">Foundation 5</a></li>
-<li><a href="https://jquery.com/">jQuery</a></li>
-<li><a href="https://daneden.github.io/animate.css/">Animate.css</a></li>
+<li><a href="http://foundation.zurb.com/" target="_blank">Foundation 5</a></li>
+<li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+<li><a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css</a></li>
 </ul>
 
 <h3>
@@ -63,7 +76,11 @@
 
 <h3>
 <a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage</h3>
-
+<ul>
+  <li>Add <strong>animated-orbit</strong> class to your orbit slider</li>
+  <li>Add <strong>animated</strong> attribute to each element you want to animate</li>
+  <li>Add aditional attributes animate-in, animate-out, animate-delay and animate-duration to costumize effect, transition, delay and duration.</li>
+</ul>
 <div class="highlight highlight-text-html-basic"><pre>    &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/css<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>css/foundation.css<span class="pl-pds">"</span></span>&gt;
     &lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>stylesheet<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/css<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>css/animate.min.css<span class="pl-pds">"</span></span>&gt;
     &lt;<span class="pl-ent">ul</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>orbit-content animated-orbit<span class="pl-pds">"</span></span> <span class="pl-e">data-orbit</span>&gt;
@@ -99,21 +116,27 @@
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/nellaparedes/animated-orbit">Animated-orbit</a> is maintained by <a href="https://github.com/nellaparedes">nellaparedes</a>.</span>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> and was based on <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
 
     </section>
 
-            <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-70376313-2");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-70376313-2");
+    pageTracker._trackPageview();
+    } catch(err) {}
+    </script>
+
+    <script type="text/javascript" src="js/modernizr.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="js/animated-orbit.min.js"></script>
+    <script>$(document).foundation();</script>
 
   </body>
 </html>

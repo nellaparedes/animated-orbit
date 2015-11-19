@@ -1,0 +1,31 @@
+{
+  "name": "Animated Orbit Site",
+  "homepage": "https://github.com/nellaparedes/animated-orbit",
+  "authors": [
+    "nellaparedes <nella.paredes@yahoo.com>"
+  ],
+  "description": "Landing page for Animated Orbit Project",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "foundation",
+    "orbit",
+    "animate.css",
+    "webpack",
+    "node"
+  ],
+  "license": "'",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.3",
+    "animate.css": "~3.4.0",
+    "animated-orbit": "~1.0.0"
+  }
+}
