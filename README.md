@@ -26,8 +26,8 @@ Add some nice animations to your Orbit Slider. You can trigger [animate.css](htt
    npm install animated-orbit
 ```
 ### Basic Usage
-- Add *animated-orbit* class to your orbit slider
-- Add *animated* attribute to each element you want to animate
+- Add **animated-orbit** class to your orbit slider
+- Add **animated** attribute to each element you want to animate
 - Add aditional attributes animate-in, animate-out, animate-delay and animate-duration to costumize effect, transition, delay and duration
 
 ```html
