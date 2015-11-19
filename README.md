@@ -6,7 +6,7 @@
 Add some nice animations to your Orbit Slider. You can trigger [animate.css](https://github.com/daneden/animate.css) animations to any element of the slide.
 
 ## Live Demo
-  - Click here to see some examples
+  - Click [here](http://nellaparedes.github.io/animated-orbit/) to see some examples
 
 ## Documentation
 
@@ -26,6 +26,10 @@ Add some nice animations to your Orbit Slider. You can trigger [animate.css](htt
    npm install animated-orbit
 ```
 ### Basic Usage
+- Add *animated-orbit* class to your orbit slider
+- Add *animated* attribute to each element you want to animate
+- Add aditional attributes animate-in, animate-out, animate-delay and animate-duration to costumize effect, transition, delay and duration
+
 ```html
     <link rel="stylesheet" type="text/css" href="css/foundation.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -53,6 +57,7 @@ Add some nice animations to your Orbit Slider. You can trigger [animate.css](htt
 	<script src="js/vendor/jquery.js"></script>
 	<script src="js/foundation.min.js"></script>
 	<script src="js/animated-orbit.min.js"></script>
+	<script>$(document).foundation();</script>
 ```
 
 ### Development
