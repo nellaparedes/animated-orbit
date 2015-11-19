@@ -1,6 +1,6 @@
 {
   "name": "animated-orbit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add animate.css to Foundation Orbit Slider",
   "main": "dist/animated-orbit.min.js",
   "repository": {
